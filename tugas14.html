@@ -1,0 +1,153 @@
+<html>
+
+<head>
+  <title>Komputer Aplikasi IT</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Righteous&display=swap" rel="stylesheet">
+  <style>
+    body {
+      user-select: none;
+    }
+
+    .header-image {
+      width: 100%;
+      max-height: 250px;
+    }
+
+    .isiTab img {
+      max-height: 350px;
+    }
+
+    .title {
+      font-size: 100px;
+      color: white;
+      font-weight: bold;
+      font-family: 'Righteous', cursive;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="w3-container">
+    <div>
+      <div class="w3-display-container">
+        <img src="images/sea.jpg" class="header-image" alt="atas">
+        <h2 class="w3-display-middle title">TraveGo</h2>
+      </div>
+    </div>
+    <div class="w3-bar w3-blue-gray">
+      <button class="w3-bar-item w3-button w3-border-right" onclick="tampilIsiTab('Home')">Home</button>
+      <button class="w3-bar-item w3-button w3-border-right" onclick="tampilIsiTab('Flight')">Flight</button>
+      <button class="w3-bar-item w3-button w3-border-right" onclick="tampilIsiTab('Hotel')">Hotel</button>
+      <button class="w3-bar-item w3-button w3-border-right" onclick="tampilIsiTab('Rental')">Rental</button>
+      <button class="w3-bar-item w3-button" onclick="tampilIsiTab('Profile')">Profile</button>
+    </div>
+
+    <div id="Home" class="w3-container w3-animate-fading isiTab">
+      <h1>Home</h1>
+      <div class="w3-panel w3-light-blue">
+        <p>Trave is a company that provides airline ticketing, car rental and hotels booking services online.</p>
+      </div>
+    </div>
+    <div id="Flight" class="w3-container w3-animate-bottom isiTab" style="display: none;">
+      <div class="w3-container">
+        <h1>Travel the world with us!</h1>
+        <div class="w3-card-4" style="padding-bottom: 20px;">
+          <form>
+            <div class="w3-container w3-green">
+              <h2>From</h2>
+            </div>
+            <p class="w3-container">
+              <input type="text" class="w3-input">
+            </p>
+            <div class="w3-container w3-orange w3-text-white">
+              <h2>To</h2>
+            </div>
+            <p class="w3-container">
+              <input type="text" class="w3-input">
+            </p>
+            <div class="w3-container">
+              <button type="submit" class="w3-button w3-blue w3-round-xxlarge">Search and find dates</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div id="Hotel" class="w3-container w3-animate-right isiTab" style="display: none;">
+      <div class="w3-container">
+        <h1>Find the best deals on every Trave product you need!</h1>
+        <div class="w3-card-4" style="padding-bottom: 20px;">
+          <form>
+            <div class="w3-container w3-orange w3-text-white">
+              <h2>City, destination, or hotel name</h2>
+            </div>
+            <p class="w3-container">
+              <input type="text" class="w3-input">
+            </p>
+            <div class="w3-container">
+              <button type="submit" class="w3-button w3-blue w3-round-xxlarge">Search</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div id="Rental" class="w3-container w3-animate-zoom isiTab" style="display: none;">
+      <div class="w3-container">
+        <h1>Find and book vehicle rental available!</h1>
+        <div class="w3-card-4" style="padding-bottom: 20px;">
+          <form>
+            <div class="w3-container w3-blue">
+              <h2>Rental Location</h2>
+            </div>
+            <p class="w3-container">
+              <input type="text" class="w3-input">
+            </p>
+            <div class="w3-container w3-gray">
+              <h2>Rental Date</h2>
+            </div>
+            <p class="w3-container">
+              <input type="date" class="w3-input">
+            </p>
+            <div class="w3-container">
+              <button type="submit" class="w3-button w3-blue w3-round-xxlarge">Search</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div id="Profile" class="w3-container w3-animate-left isiTab" style="display: none;">
+      <div class="w3-panel w3-red w3-center">
+        <p>NIM: 10121189</p>
+      </div>
+      <div class="w3-panel w3-green w3-center">
+        <p>Name: Muhammad Izham Ali Azhar</p>
+      </div>
+      <div class="w3-panel w3-blue w3-center">
+        <p>Class: INFORMATIKA 5</p>
+      </div>
+    </div>
+
+    <script>
+      function tampilIsiTab(namaTab) {
+        var i;
+        var title = document.querySelector(".title");
+        var x = document.getElementsByClassName("isiTab");
+
+        if (namaTab != "Home" && namaTab != "Profile") {
+          title.innerText = `TraveGo ${namaTab}`;
+        } else {
+          title.innerText = "TraveGo";
+        }
+        for (i = 0; i < x.length; i++) {
+          x[i].style.display = "none";
+        }
+        document.getElementById(namaTab).style.display = "block";
+      }
+    </script>
+
+</body>
+
+</html>
