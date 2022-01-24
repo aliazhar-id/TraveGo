@@ -6,8 +6,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>TraveGo</title>
   <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Righteous&display=swap" rel="stylesheet">
   <style>
     body {
@@ -25,8 +23,6 @@
 
     .title {
       font-size: 100px;
-      color: white;
-      font-weight: bold;
       font-family: 'Righteous', cursive;
     }
   </style>
@@ -37,7 +33,7 @@
     <div>
       <div class="w3-display-container">
         <img src="images/sea.jpg" class="header-image" alt="atas">
-        <h2 class="w3-display-middle title">TraveGo</h2>
+        <h2 class="w3-display-middle w3-text-white title"><b>TraveGo</b></h2>
       </div>
     </div>
     <div class="w3-bar w3-blue-gray">
@@ -135,7 +131,7 @@
     <script>
       function tampilIsiTab(namaTab) {
         var i;
-        var title = document.querySelector(".title");
+        var title = document.querySelector(".title b");
         var x = document.getElementsByClassName("isiTab");
 
         if (namaTab != "Home" && namaTab != "Profile") {
@@ -143,6 +139,7 @@
         } else {
           title.innerText = "TraveGo";
         }
+        
         for (i = 0; i < x.length; i++) {
           x[i].style.display = "none";
         }
